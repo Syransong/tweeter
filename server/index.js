@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; // code should be executed in strict mode ex. cannot use undeclared variables
 
 // Basic express setup:
 
@@ -8,7 +8,7 @@ const bodyParser    = require("body-parser");
 const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static("public")); // gets the static assests from the public directory
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
