@@ -1,3 +1,12 @@
 nav {
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  font-family: "Bungee", sans-serif;
+  padding: 1.5em;
+}
+
+span {
   font-family: "Bungee", sans-serif;
 }
