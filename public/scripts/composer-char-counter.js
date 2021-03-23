@@ -5,9 +5,9 @@ $(document).ready(function() {
 
   $("#tweet-text").on("input", function(event) {
     const tweetLength = ($(this)).val().length;
-    let charsLeft = 140 - tweetLength;
-    console.log(charsLeft);
-    
-  })
+    const counter = $(this).closest("form").find(".counter");
+    const maxLength = 140;
 
+    counter.text(maxLength - tweetLength);
+  })
 });
