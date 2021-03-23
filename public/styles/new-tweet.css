@@ -1,7 +1,7 @@
 .new-tweet {
   display: flex;
-  width: 100%;
   flex-direction: column;
+  width: 100%;
 }
 
 form {
@@ -12,8 +12,8 @@ form {
 
 label {
   display: flex;
-  font-family: "Source Sans Pro", sans-serif;
   width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
   border-bottom: solid;
 }
 
@@ -32,21 +32,20 @@ label {
 
 button {
   color: white;
-  background-color: darkcyan;
+  background-color: #008b8b;
   font-family: "Bungee", sans-serif;
   border: none;
   padding: 5px 20px 5px 20px;
-  justify-content: space-between;
   border-radius: 8px;
 }
 
 button:hover {
-  color: white;
+  color: #ffffff;
   background-color: rgb(6, 78, 78);
 }
 
 .counter {
-  color: grey;
+  color: #808080;
   font-family: "Bungee", sans-serif;
 }
 
