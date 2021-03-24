@@ -49,3 +49,6 @@ button:hover {
   font-family: "Bungee", sans-serif;
 }
 
+.char-exceeded {
+  color: red;
+}

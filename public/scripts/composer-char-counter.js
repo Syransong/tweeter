@@ -8,6 +8,10 @@ $(document).ready(function() {
     const counter = $(this).closest("form").find(".counter");
     const maxLength = 140;
 
+    if (tweetLength > maxLength) {
+      counter.addClass("char-exceeded");
+    }
+    
     counter.text(maxLength - tweetLength);
   })
 });
