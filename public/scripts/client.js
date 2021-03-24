@@ -6,7 +6,7 @@
 
 $(document).ready(() => {
   
-  // tweet data object 
+  // Array of tweet objects
   const tweetData = [
     {
     "user": {
@@ -30,33 +30,6 @@ $(document).ready(() => {
       "created_at": 1461113959088
     }
   ]
-const createTweetElement = function(tweet) {
-  
-  let $newTweet = $(
-    `<article class="tweet">
-      <header>
-        <img class="profile-pic" src=${tweet.user.avatars}">
-        <div class="profile-info">
-         <p>${tweet.user.name}</p>
-         <p class="username">${tweet.user.handle}</p>
-        </div>
-      </header>
-      <p>${tweet.content.text}</p>
-      <footer>
-       <p>${moment(tweet.created_at).fromNow()}</p>
-       <div class="icons">
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="fas fa-heart"></i>
-       </div>
-      </footer>
-    </article>`
-  );
-  return $newTweet;
-}
-
-  // const $tweet = createTweetElement(tweetData);
-  
   
   const renderTweets = function(tweets) {
     
@@ -70,6 +43,32 @@ const createTweetElement = function(tweet) {
       $(".posted-tweets").append(createTweetElement(tweet))
     }    
   }
+
+  const createTweetElement = function(tweet) {
+  
+    let $newTweet = $(
+      `<article class="tweet">
+        <header>
+          <img class="profile-pic" src=${tweet.user.avatars}">
+          <div class="profile-info">
+          <p>${tweet.user.name}</p>
+          <p class="username">${tweet.user.handle}</p>
+          </div>
+        </header>
+        <p>${tweet.content.text}</p>
+        <footer>
+        <p>${moment(tweet.created_at).fromNow()}</p>
+        <div class="icons">
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+        </footer>
+      </article>`
+    );
+    return $newTweet;
+  }
+
   renderTweets(tweetData);
 });
 
