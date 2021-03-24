@@ -5,7 +5,7 @@
  */
 
 $(document).ready(() => {
-
+  
   // tweet data object 
   const tweetData = {
     "user": {
@@ -18,6 +18,17 @@ $(document).ready(() => {
       },
     "created_at": 1461116232227
   }
+
+  //convert long date to regular date 
+  // const tweetDate = new Date(tweetData.created_at);
+  // console.log(tweetDate);
+  // tweetDate.toDateString();
+  // console.log(tweetDate);
+  // const datePosted = Date.now() - tweetDate;
+  // console.log(datePosted.toDateString());
+
+  // const tweetDate = new Date(tweetData.created_at);
+  // const presentDate = new Date.now();
 
 // construct new tweet using jQuery
 
@@ -34,7 +45,7 @@ const createTweetElement = function(tweetObj) {
       </header>
       <p>${tweetObj.content.text}</p>
       <footer>
-       <p>${tweetObj.created_at}</p>
+       <p>${moment(tweetObj.created_at).fromNow()}</p>
        <div class="icons">
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
