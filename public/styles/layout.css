@@ -57,17 +57,23 @@ article.tweet {
   background-color: #f4f1ec;
   border: solid #545149;
   padding: 1em;
-  opacity: 0.7;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  transition-delay: 0.5s;
 }
 
 article.tweet:hover {
-  box-shadow: 10px 10px;
-  color: #758383;
+  box-shadow: 10px 10px #8d92bb;
+  color: #525785;
   opacity:1;
 }
 
 .username {
   display: none;
+  transition: display 1s;
+  color: #8d92bb;
 }
 
 article.tweet:hover .username {
@@ -87,6 +93,7 @@ article.tweet header {
 .profile-pic {
   width: 100px;
   height: 100px;
+  border-radius: 50%
 }
 
 .profile-info {
