@@ -47,6 +47,7 @@ body {
   display: flex;
   background-color: #f4f1ec;
   padding: 1em;
+  flex-direction: column;
 }
 
 article.tweet {
@@ -57,6 +58,7 @@ article.tweet {
   background-color: #f4f1ec;
   border: solid #545149;
   padding: 1em;
+  margin-bottom: 20px;
   opacity: 0.5;
   transition-property: opacity;
   transition-duration: 1s;
