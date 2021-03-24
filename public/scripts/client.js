@@ -9,7 +9,7 @@ $(document).ready(() => {
   // tweet data object 
   const tweetData = {
     "user": {
-      "name": "Newton",
+      "name": "Kirby",
       "avatars": "https://i.imgur.com/73hZDYK.png",
         "handle": "@SirIsaac"
       },
@@ -20,32 +20,33 @@ $(document).ready(() => {
   }
 
 // construct new tweet using jQuery
-const $tweet = $(
-  `<article class="tweet">
-    <header>
-      <img class="profile-pic" src=${tweetData.user.avatars}">
-      <div class="profile-info">
-       <p>${tweetData.user.name}</p>
-       <p class="username">${tweetData.user.handle}</p>
-      </div>
-    </header>
-    <p>${tweetData.content.text}</p>
-    <footer>
-     <p>${tweetData.created_at}</p>
-     <div class="icons">
-      <i class="fas fa-flag"></i>
-      <i class="fas fa-retweet"></i>
-      <i class="fas fa-heart"></i>
-     </div>
-    </footer>
-  </article>`
-);
 
-  // const createTweetElement = function(tweetData) {
+const createTweetElement = function(tweetObj) {
   
-  // }
-  
-  // const $tweet = createTweetElement(tweetData);
+  const newTweet = $(
+    `<article class="tweet">
+      <header>
+        <img class="profile-pic" src=${tweetObj.user.avatars}">
+        <div class="profile-info">
+         <p>${tweetObj.user.name}</p>
+         <p class="username">${tweetData.user.handle}</p>
+        </div>
+      </header>
+      <p>${tweetObj.content.text}</p>
+      <footer>
+       <p>${tweetObj.created_at}</p>
+       <div class="icons">
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+       </div>
+      </footer>
+    </article>`
+  );
+  return newTweet;
+}
+
+  const $tweet = createTweetElement(tweetData);
   
   // console.log("$tweet", $tweet); //see what it looks like
   $(".posted-tweets").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes 
