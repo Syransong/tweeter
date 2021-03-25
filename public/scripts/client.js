@@ -5,29 +5,29 @@
  */
 
 // Array of tweet objects
-const tweetData = [
-  {
-  "user": {
-    "name": "Kirby",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-  }, 
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+// const tweetData = [
+//   {
+//   "user": {
+//     "name": "Kirby",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+//   }, 
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ];
 
 $(document).ready(() => {
   
@@ -40,7 +40,7 @@ $(document).ready(() => {
     //calls createTweetElement for each tweet 
     //takes return value and appends it to the tweets container 
     for (let tweet of sortedTweets) {
-      $(".posted-tweets").append(createTweetElement(tweet))
+      $(".posted-tweets").append(createTweetElement(tweet));
     }    
   }
 
@@ -69,7 +69,7 @@ $(document).ready(() => {
     return $newTweet;
   }
 
-  renderTweets(tweetData);
+  // renderTweets(tweetData);
 
   //event listener for submit 
   $("form").on("submit", function(event) {
@@ -89,6 +89,23 @@ $(document).ready(() => {
     })
   })
 
+// Loads tweets 
+  const loadTweets = function () {
+
+    $.ajax({
+      url: "/tweets/",
+      method: "GET",
+      dataType: "JSON"
+    })
+    .done(() => {
+      renderTweets();
+    })
+    .fail(() => {
+      console.log(err.message);
+    })
+  };
+
+  loadTweets();
 });
 
 // console.log("$tweet", $tweet); //see what it looks like
