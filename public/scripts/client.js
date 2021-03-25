@@ -71,10 +71,12 @@ $(document).ready(() => {
         method: 'POST',
         data: $("form").serialize()
       })
-      .done(()=>{
-        $(".posted-tweets").empty();
+      .done((res) => {
+        // $(".posted-tweets").empty();
+        $("#tweet-text").val(" ");
         loadTweets();
         console.log("Did it work?");
+        return;
       })
       .fail((err) => {
         console.log(err.message);
