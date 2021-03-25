@@ -20,6 +20,13 @@ const validateTweet = function (text) {
   }
 };
 
+// Escape Function
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML
+}
+
 $(document).ready(() => {
   
   const renderTweets = function(tweets) {
@@ -46,7 +53,7 @@ $(document).ready(() => {
            <p class="username">${tweet.user.handle}</p>
           </div>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}.</p>
         <footer>
         <p>${moment(tweet.created_at).fromNow()}</p>
         <div class="icons">
