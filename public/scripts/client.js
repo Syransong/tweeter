@@ -9,8 +9,14 @@
 const validateTweet = function (text) {
   if (!text) {
     alert("Where's your tweet?");
+    return false;
+
   } else if (text.length > 140) {
     alert("Your tweet is too long!");
+    return false;
+
+  } else {
+    return true;
   }
 };
 
@@ -57,20 +63,25 @@ $(document).ready(() => {
     
     event.preventDefault();
 
-    const text = $("tweet-text").val();
+    const text = $("#tweet-text").val();
 
-    if 
-    $.ajax({
-      url: "/tweets/",
-      method: 'POST',
-      data: $("form").serialize()
-    })
-    .done(()=>{
-      console.log("Did it work?");
-    })
-    .fail((err) => {
-      console.log(err.message);
-    })
+    if (validateTweet(text)) {
+      $.ajax({
+        url: "/tweets/",
+        method: 'POST',
+        data: $("form").serialize()
+      })
+      .done(()=>{
+        $(".posted-tweets").empty();
+        loadTweets();
+        console.log("Did it work?");
+      })
+      .fail((err) => {
+        console.log(err.message);
+      })
+    } else {
+      console.log("Tweet could not be posted :(")
+    }
   })
 
 // Loads tweets 
@@ -89,7 +100,7 @@ $(document).ready(() => {
     })
   };
 
-  loadTweets();
+  // loadTweets();
 });
 
 // console.log("$tweet", $tweet); //see what it looks like
