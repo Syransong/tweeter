@@ -84,7 +84,7 @@ $(document).ready(() => {
     }
   })
 
-// Loads tweets 
+  // Loads tweets 
   const loadTweets = function () {
 
     $.ajax({
@@ -100,8 +100,4 @@ $(document).ready(() => {
     })
   };
 
-  // loadTweets();
 });
-
-// console.log("$tweet", $tweet); //see what it looks like
-// $(".posted-tweets").append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes 
