@@ -4,6 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// validate tweet function 
+
+const validateTweet = function (text) {
+  if (!text) {
+    alert("Where's your tweet?");
+  } else if (text.length > 140) {
+    alert("Your tweet is too long!");
+  }
+};
+
 $(document).ready(() => {
   
   const renderTweets = function(tweets) {
@@ -47,6 +57,9 @@ $(document).ready(() => {
     
     event.preventDefault();
 
+    const text = $("tweet-text").val();
+
+    if 
     $.ajax({
       url: "/tweets/",
       method: 'POST',
