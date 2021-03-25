@@ -42,7 +42,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <div class="error"></div>
+        <div class="alert">
+          <p class="alert-msg">Peekaboo, you shouldn't be seeing this :P</p>
+        </div>
         <form method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" placeholder = "What I'm up to today..."></textarea>

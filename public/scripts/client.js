@@ -8,13 +8,17 @@
 
 const validateTweet = function (text) {
   if (!text) {
-    alert("Where's your tweet?");
+    // alert("Where's your tweet?");
+    $(".alert").addClass("no-tweet");
+    $(".alert-msg").text("Hey, where's your tweet? 😤 ");
     return false;
 
   } else if (text.length > 140) {
-    alert("Your tweet is too long!");
+    // alert("Your tweet is too long!");
+    $(".alert").addClass("long-tweet");
+    $(".alert-msg").text("Hey, your tweet is too dang long! 😡");
     return false;
-
+    
   } else {
     return true;
   }

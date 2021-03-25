@@ -53,7 +53,23 @@ button:hover {
   color: red;
 }
 
-.error {
-  border: red;
+.alert {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid red;
   border-radius: 8px;
+  /* display: none; */
+  /* margin: 24px; */
+  /* padding: 24px; */
+}
+
+.no-tweet {
+  display: block;
+  color: red;
+}
+
+.too-long {
+  display: block;
 }
