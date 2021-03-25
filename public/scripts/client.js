@@ -24,6 +24,8 @@ $(document).ready(() => {
   
   const renderTweets = function(tweets) {
     
+    $(".posted-tweets").empty();
+    
     // Sort tweets from latest to older
     let sortedTweets = tweets.sort((a, b) => b.created_at - a.created_at);
     
@@ -72,7 +74,6 @@ $(document).ready(() => {
         data: $("form").serialize()
       })
       .done((res) => {
-        // $(".posted-tweets").empty();
         $("#tweet-text").val(" ");
         loadTweets();
         console.log("Did it work?");
