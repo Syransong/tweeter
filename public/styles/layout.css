@@ -111,6 +111,7 @@ article.tweet footer {
   border-top: solid #545149;
 } 
 
+/* Breakpoint for desktop */
 @media only screen and (min-width: 1024px) {
 
   body {
