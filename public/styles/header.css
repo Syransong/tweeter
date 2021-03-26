@@ -9,3 +9,7 @@ header {
   background-color: #00c2a8;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
+
+.user-pic {
+  margin-top: 10px;
+}
