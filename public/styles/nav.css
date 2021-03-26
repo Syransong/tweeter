@@ -26,3 +26,11 @@ nav {
   color: red;
   margin-top: 10px;
 }
+
+/* Breakpoint for mobile */
+@media only screen and (max-width: 600px) {
+
+  nav {
+    display: none;
+  }
+}
