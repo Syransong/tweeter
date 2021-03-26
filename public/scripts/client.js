@@ -5,7 +5,6 @@
  */
 
 // validate tweet function 
-
 const validateTweet = function (text) {
   
   console.log(!text);
@@ -14,34 +13,32 @@ const validateTweet = function (text) {
     $(".alert").slideDown();
     $(".alert-msg").text("Hey, where's your tweet? 🤔 ");
     return false;
-
-  } else if (text.length > 140) {
+  }
+  if (text.length > 140) {
     // alert("Your tweet is too long!");
     $(".alert").slideDown();
     // $(".alert").addClass("long-tweet");
     $(".alert-msg").text("Hey, your tweet is too dang long! 😡");
     return false;
-    
-  } else {
-    return true;
-  }
+  } 
+  return true;
 };
 
 // Escape Function
 const escape = function(str) {
-  let div = document.createElement("div");
+  const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML
 }
 
 $(document).ready(() => {
   
+  // Render Tweets
   const renderTweets = function(tweets) {
-    
     $(".posted-tweets").empty();
     
-    // Sort tweets from latest to older
-    let sortedTweets = tweets.sort((a, b) => b.created_at - a.created_at);
+    // Sort tweets from latest to oldest
+    const sortedTweets = tweets.sort((a, b) => b.created_at - a.created_at);
     
     //loops through sorted tweets and appends them to the container
     for (let tweet of sortedTweets) {
@@ -50,8 +47,7 @@ $(document).ready(() => {
   };
 
   const createTweetElement = function(tweet) {
-  
-    let $newTweet = $(
+    const $newTweet = $(
       `<article class="tweet">
         <header>
           <img class="profile-pic" src=${tweet.user.avatars}">
@@ -60,7 +56,7 @@ $(document).ready(() => {
            <p class="username">${tweet.user.handle}</p>
           </div>
         </header>
-        <p>${escape(tweet.content.text)}.</p>
+        <p>${escape(tweet.content.text)}</p>
         <footer>
         <p>${moment(tweet.created_at).fromNow()}</p>
         <div class="icons">
@@ -76,7 +72,6 @@ $(document).ready(() => {
 
   // Event listener for submit 
   $("form").on("submit", function(event) {
-    
     event.preventDefault();
 
     const text = $("#tweet-text").val();
@@ -120,4 +115,5 @@ $(document).ready(() => {
     })
   };
 
+  loadTweets();
 });

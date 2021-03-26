@@ -60,10 +60,10 @@ article.tweet {
   padding: 1em;
   margin-bottom: 20px;
   opacity: 0.5;
-  transition-property: opacity;
+  /* transition-property: opacity;
   transition-duration: 1s;
   transition-timing-function: linear;
-  transition-delay: 0.5s;
+  transition-delay: 0.5s; */
 }
 
 article.tweet:hover {
