@@ -31,7 +31,11 @@ nav {
 /* Breakpoint for mobile */
 @media only screen and (max-width: 600px) {
 
-  nav {
+  nav{
+    justify-content: center;
+  }
+
+  .nav-new-tweet {
     display: none;
   }
 }
