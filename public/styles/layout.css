@@ -57,13 +57,14 @@ article.tweet {
   justify-content: center;
   background-color: #f4f1ec;
   border: solid #545149;
+  border-radius: 25px;
   padding: 1em;
   margin-bottom: 20px;
   opacity: 0.5;
-  /* transition-property: opacity;
+  transition-property: opacity;
   transition-duration: 1s;
   transition-timing-function: linear;
-  transition-delay: 0.5s; */
+  transition-delay: 0.5s;
 }
 
 article.tweet:hover {
@@ -114,3 +115,14 @@ article.tweet footer {
   align-items: center;
   border-top: solid #545149;
 } 
+
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
