@@ -61,11 +61,7 @@ button:hover {
   border: solid red;
   border-radius: 8px;
   display: none; 
-  /* use flex display. make text value null  */
-  /* margin: 24px; */
-  /* padding: 24px; */
-  /* transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  transform: translateY(0); */
+  margin: 24px; 
 }
 
 .no-tweet {
@@ -76,6 +72,4 @@ button:hover {
 .too-long {
   color: red;
   display: block;
-  /* transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  transform: translateY(0); */
 }
