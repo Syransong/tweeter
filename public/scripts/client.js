@@ -4,23 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// validate tweet function 
-const validateTweet = function (text) {
-  
-  console.log(!text);
+// Validate tweet function
+const validateTweet = function(text) {
   if (!text) {
-    // alert("Where's your tweet?");
     $(".alert").slideDown();
     $(".alert-msg").text("Hey, where's your tweet? 🤔 ");
     return false;
   }
   if (text.length > 140) {
-    // alert("Your tweet is too long!");
     $(".alert").slideDown();
-    // $(".alert").addClass("long-tweet");
     $(".alert-msg").text("Hey, your tweet is too dang long! 😡");
     return false;
-  } 
+  }
   return true;
 };
 
@@ -28,11 +23,10 @@ const validateTweet = function (text) {
 const escape = function(str) {
   const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
-  return div.innerHTML
-}
+  return div.innerHTML;
+};
 
 $(document).ready(() => {
-  
   // Render Tweets
   const renderTweets = function(tweets) {
     $(".posted-tweets").empty();
@@ -43,9 +37,10 @@ $(document).ready(() => {
     //loops through sorted tweets and appends them to the container
     for (let tweet of sortedTweets) {
       $(".posted-tweets").append(createTweetElement(tweet));
-    }    
+    }
   };
 
+  // Create new tweet template
   const createTweetElement = function(tweet) {
     const $newTweet = $(
       `<article class="tweet">
@@ -68,9 +63,9 @@ $(document).ready(() => {
       </article>`
     );
     return $newTweet;
-  }
+  };
 
-  // Event listener for submit 
+  // Event listener for submit
   $("form").on("submit", function(event) {
     event.preventDefault();
 
@@ -82,36 +77,36 @@ $(document).ready(() => {
         method: 'POST',
         data: $("form").serialize()
       })
-      .done((res) => {
-        loadTweets();
-        $("#tweet-text").val(""); 
-        $(".counter").val("140");
-        $(".counter").removeClass("char-exceeded");
-        $(".alert").slideUp();
-        return;
-      })
-      .fail((err) => {
-        console.log(err.message);
-      })
+        .done(() => {
+          loadTweets();
+          $("#tweet-text").val("");
+          $(".counter").val("140");
+          $(".counter").removeClass("char-exceeded");
+          $(".alert").slideUp();
+          return;
+        })
+        .fail(() => {
+          console.log(err.message);
+        });
     } else {
-      console.log("Tweet could not be posted :(")
+      console.log("Tweet could not be posted :(");
     }
-  })
+  });
 
-  // Loads tweets 
-  const loadTweets = function () {
+  // Loads tweets
+  const loadTweets = function() {
 
     $.ajax({
       url: "/tweets/",
       method: "GET",
       dataType: ""
     })
-    .done((res) => {
-      renderTweets(res);
-    })
-    .fail(() => {
-      console.log(err.message);
-    })
+      .done((res) => {
+        renderTweets(res);
+      })
+      .fail(() => {
+        console.log(err.message);
+      });
   };
 
   loadTweets();
