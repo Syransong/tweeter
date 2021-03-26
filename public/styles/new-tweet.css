@@ -62,14 +62,9 @@ button:hover {
   border-radius: 8px;
   display: none; 
   margin: 24px; 
+  padding: 0.2em;
 }
 
-.no-tweet {
-  display: block;
-  color: red;
-}
+/* .alert-msg {
 
-.too-long {
-  color: red;
-  display: block;
-}
+} */
