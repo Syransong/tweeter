@@ -7,15 +7,18 @@
 // validate tweet function 
 
 const validateTweet = function (text) {
+  
+  console.log(!text);
   if (!text) {
     // alert("Where's your tweet?");
-    $(".alert").addClass("no-tweet");
-    $(".alert-msg").text("Hey, where's your tweet? 😤 ");
+    $(".alert").slideDown();
+    $(".alert-msg").text("Hey, where's your tweet? 🤔 ");
     return false;
 
   } else if (text.length > 140) {
     // alert("Your tweet is too long!");
-    $(".alert").addClass("long-tweet");
+    $(".alert").slideDown();
+    // $(".alert").addClass("long-tweet");
     $(".alert-msg").text("Hey, your tweet is too dang long! 😡");
     return false;
     
@@ -77,7 +80,7 @@ $(document).ready(() => {
     event.preventDefault();
 
     const text = $("#tweet-text").val();
-
+  
     if (validateTweet(text)) {
       $.ajax({
         url: "/tweets/",
@@ -85,8 +88,11 @@ $(document).ready(() => {
         data: $("form").serialize()
       })
       .done((res) => {
-        $("#tweet-text").val(" ");
         loadTweets();
+        $("#tweet-text").val(""); 
+        $(".counter").val("140");
+        $(".alert").slideUp();
+        // $(".alert").removeClass(["no-tweet", "too-long"]);
         console.log("Did it work?");
         return;
       })
