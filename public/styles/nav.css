@@ -7,8 +7,22 @@ nav {
   padding: 1.5em;
   position: fixed;
   top: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-span {
+.site-name {
   font-family: "Bungee", sans-serif;
+}
+
+.nav-new-tweet {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow {
+  color: red;
+  margin-top: 10px;
 }
