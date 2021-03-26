@@ -37,8 +37,7 @@
         <i class="fas fa-angle-double-down arrow"></i>
       </div>
     </nav>
-    <!-- <div class="main-page"> -->
-    <header>
+    <header class="desktop-panel">
       <div class="user-pic-wrap">
           <img class="user-pic" src="https://www.kindpng.com/picc/m/15-156796_astronaut-icon-vector-outer-space-icon-png-transparent.png"> 
       </div>
@@ -47,23 +46,23 @@
           <h2>Siyuan Song</h2>
       </div>
     </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class="alert">
-          <p class="alert-msg">Peekaboo, you shouldn't be seeing this :P</p>
-        </div>
-        <form method="POST" action="/tweets/">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder = "What I'm up to today..."></textarea>
-          <div class="lower-form">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="alert">
+            <p class="alert-msg">Peekaboo, you shouldn't be seeing this :P</p>
           </div>
-        </form>
-      </section>
-      <section class="posted-tweets">
-      </section>
+          <form method="POST" action="/tweets/">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" placeholder = "What I'm up to today..."></textarea>
+            <div class="lower-form">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="posted-tweets">
+        </section>
     </main>
   </div>
   </body>
