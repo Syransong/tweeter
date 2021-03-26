@@ -12,8 +12,24 @@ header {
 
 .user-pic {
   margin-top: 10px;
+  height: 10em;
+  clip-path: circle(80px at center);
+  border: white 10px;
 }
 
+.user-pic-wrap {
+  filter: drop-shadow(-1px 10px 3px #32320080);
+  border: white 5px;
+}
+
+h2 {
+  margin: 0;
+}
+
+/* Breakpoint for desktop */
 @media only screen and (min-width: 1024px) {
-  
+  header {
+    margin: 0;
+    height: 100vh;
+  }
 }
