@@ -86,9 +86,8 @@ $(document).ready(() => {
         loadTweets();
         $("#tweet-text").val(""); 
         $(".counter").val("140");
+        $(".counter").removeClass("char-exceeded");
         $(".alert").slideUp();
-        // $(".alert").removeClass(["no-tweet", "too-long"]);
-        console.log("Did it work?");
         return;
       })
       .fail((err) => {
