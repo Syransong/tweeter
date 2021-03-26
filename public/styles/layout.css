@@ -23,6 +23,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   margin-top: 120px;
+  border: yellow;
 }
 
 /*
@@ -36,6 +37,8 @@ body {
   align-items: center;
   width: 90%;
   background-color: #f4f1ec;
+  margin: 2em;
+  border: solid red;
  }
 
  /*

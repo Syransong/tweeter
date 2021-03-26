@@ -85,7 +85,7 @@ $(document).ready(() => {
           $(".alert").slideUp();
           return;
         })
-        .fail(() => {
+        .fail((err) => {
           console.log(err.message);
         });
     } else {
@@ -98,13 +98,12 @@ $(document).ready(() => {
 
     $.ajax({
       url: "/tweets/",
-      method: "GET",
-      dataType: ""
+      method: "GET"
     })
       .done((res) => {
         renderTweets(res);
       })
-      .fail(() => {
+      .fail((err) => {
         console.log(err.message);
       });
   };
