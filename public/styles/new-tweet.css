@@ -1,7 +1,9 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
+  padding: 1em;
 }
 
 form {
@@ -61,6 +63,8 @@ button:hover {
   border: solid red;
   border-radius: 8px;
   display: none; 
-  margin: 24px; 
-  padding: 0.2em;
+}
+
+.alert-msg {
+  margin-left: 10px;
 }

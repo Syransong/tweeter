@@ -117,6 +117,7 @@ article.tweet footer {
   body {
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
   }
 
   main {
